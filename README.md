@@ -27,7 +27,7 @@ This process here should be able to guide you on how to contribute effectively t
 - Make the original  hslcreators/Lecturedeck repo the remote upstream (at upstream)
 
 ```
-git remote add upstream [https://github.com/hslcreators/lecturedeck-fe.git](https://github.com/hslcreators/lecturedeck-fe.git)
+git remote add upstream https://github.com/hslcreators/lecturedeck-fe.git
 ```
 
 - Create a branch FROM develop, ALWAYS CREATE YOUR BRANCH FROM DEVELOP,
