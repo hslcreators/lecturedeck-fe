@@ -90,7 +90,7 @@ export default function Navbar() {
             </div>
           </Link>
         </div>
-        <div className={`w-[calc(100%-75px)] h-[calc(100vh-75px)] top-[75px] left-0  absolute bg-blue z-20 duration-300 ${isOpenMenu ? '-left-[100%]' : ''} `}>
+        <div className={`w-[calc(100%-75px)] h-[calc(100vh-75px)] top-[75px] left-0  absolute bg-blue z-20 duration-300 ${isOpenMenu ? '' : '-left-[100%]'} `}>
             
         </div>
       </div>
