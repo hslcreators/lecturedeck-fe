@@ -1,4 +1,4 @@
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import arrdown from "../assets/arrdown.svg";
 import search from "../assets/search.svg"
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="hidden lg:flex items-center justify-between w-full">
         <div className="flex">
           <Link to="/">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" className="h-12"/>
           </Link>
           <ul className="flex items-center ml-20 font-inter text-slate-500">
             <Link to="/explore">
