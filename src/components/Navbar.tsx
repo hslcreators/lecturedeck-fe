@@ -1,6 +1,5 @@
 import logo from "../assets/logo.png";
 import arrdown from "../assets/arrdown.svg";
-import search from "../assets/search.svg"
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -13,11 +12,11 @@ export default function Navbar() {
   };
 
   return (
-    <div className="px-8 lg:px-24 h-[75px] flex items-center relative">
+    <div className="px-8 lg:px-24 h-[75px] flex items-center fixed w-full border-b">
       <div className="hidden lg:flex items-center justify-between w-full">
         <div className="flex">
           <Link to="/">
-            <img src={logo} alt="logo" className="h-12"/>
+            <img src={logo} alt="logo" className="h-12" />
           </Link>
           <ul className="flex items-center ml-20 font-inter text-slate-500">
             <Link to="/explore">
@@ -50,48 +49,71 @@ export default function Navbar() {
           </Link>
         </ul>
       </div>
-      <div className="flex justify-between w-full lg:hidden">
+
+      {/* -------------------------- Mobile Navigation ------------------------------ */}
+      <div className="flex justify-between items-center w-full lg:hidden">
         <div className="flex">
-          <div
-            className="w-[40px] h-[30px] flex flex-col justify-between mr-3"
-            onClick={handleClick}
-          >
-            <div
-              className={`w-[40px] h-[3px] rounded-sm bg-black duration-300 ${
-                isOpenMenu
-                  ? "rotate-45 translate-y-[14px] -translate-x-[8px] w-[45px]"
-                  : ""
-              }`}
-            ></div>
-            <div
-              className={`w-[25px] h-[3px] rounded-sm bg-black duration-300 ${
-                isOpenMenu ? "opacity-0" : ""
-              }`}
-            ></div>
-            <div
-              className={`w-[40px] h-[3.5px] rounded-sm bg-black duration-300 ${
-                isOpenMenu
-                  ? "-rotate-45 -translate-y-[14px] -translate-x-[8px] w-[45px]"
-                  : ""
-              }`}
-            ></div>
-          </div>
           <Link to="/">
-            <img src={logo} alt="" />
+            <img src={logo} alt="" className="h-12" />
           </Link>
         </div>
 
-        <div className="flex">
-            <img src={search} alt="" />
-
-            <Link to="/signup">
-            <div className="px-4 py-2 ml-3 border-slate-400 bg-blue text-white font-bold rounded-lg font-inter">
-              Sign Up
-            </div>
-          </Link>
+        <div
+          className="w-[40px] h-[30px] flex flex-col justify-between mr-3"
+          onClick={handleClick}
+        >
+          <div
+            className={`w-[40px] h-[3px] rounded-sm bg-black duration-300 ${
+              isOpenMenu
+                ? "rotate-45 translate-y-[14px] -translate-x-[8px] w-[45px]"
+                : ""
+            }`}
+          ></div>
+          <div
+            className={`w-[25px] h-[3px] rounded-sm bg-black duration-300 ${
+              isOpenMenu ? "opacity-0" : ""
+            }`}
+          ></div>
+          <div
+            className={`w-[40px] h-[3.5px] rounded-sm bg-black duration-300 ${
+              isOpenMenu
+                ? "-rotate-45 -translate-y-[14px] -translate-x-[8px] w-[45px]"
+                : ""
+            }`}
+          ></div>
         </div>
-        <div className={`w-[calc(100%-75px)] h-[calc(100vh-75px)] top-[75px] left-0  absolute bg-blue z-20 duration-300 ${isOpenMenu ? '' : '-left-[100%]'} `}>
-            
+        <div
+          className={`w-[calc(100%-75px)] h-[calc(100vh-75px)] top-[75px] bg-white border-r absolute  z-20 duration-300 ${
+            isOpenMenu ? " left-0" : "  -left-[100%]"
+          } flex items-center justify-center text-center`}
+        >
+          <ul className="font-inter text-2xl font-semibold">
+            <Link to="/explore">
+              <li className="px-4 py-2 my-3">Explore</li>
+            </Link>
+            <Link to="/features">
+              <li className="px-4 py-2 my-3">Features</li>
+            </Link>
+            <Link to="/resources">
+              <li className="px-4 py-2 my-3 flex items-center">
+                <span className="inline-block mr-2">Resources</span>{" "}
+                <img src={arrdown} alt="" />
+              </li>
+            </Link>
+            <Link to="/pricing">
+              <li className="px-4 py-2 my-3">Pricing</li>
+            </Link>
+            <Link to="/login">
+              <li className="px-4 py-3 mt-4 mb-8 border-2 border-slate-400 text-slate-700 font-bold rounded-lg ">
+                Log in
+              </li>
+            </Link>
+            <Link to="/signup" onClick={handleClick}>
+              <li className="px-8 py-4 border-slate-400 bg-blue text-white font-bold rounded-lg">
+                Get Started
+              </li>
+            </Link>
+          </ul>
         </div>
       </div>
     </div>
