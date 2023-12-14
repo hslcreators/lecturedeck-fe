@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="px-6 lg:px-24 h-[75px] flex items-center fixed w-full border-b">
+    <div className="bg-white px-6 lg:px-24 h-[75px] flex items-center fixed w-full border-b">
       <div className="hidden lg:flex items-center justify-between w-full">
         <div className="flex">
           <Link to="/">
@@ -88,22 +88,22 @@ export default function Navbar() {
           } flex items-center justify-center text-center`}
         >
           <ul className="font-inter text-2xl font-semibold">
-            <Link to="/explore">
+            <Link to="/explore" onClick={handleClick}>
               <li className="px-4 py-2 my-3">Explore</li>
             </Link>
-            <Link to="/features">
+            <Link to="/features" onClick={handleClick}>
               <li className="px-4 py-2 my-3">Features</li>
             </Link>
-            <Link to="/resources">
+            <Link to="/resources" onClick={handleClick}>
               <li className="px-4 py-2 my-3 flex items-center">
                 <span className="inline-block mr-2">Resources</span>{" "}
                 <img src={arrdown} alt="" />
               </li>
             </Link>
-            <Link to="/pricing">
+            <Link to="/pricing" onClick={handleClick}>
               <li className="px-4 py-2 my-3">Pricing</li>
             </Link>
-            <Link to="/login">
+            <Link to="/login" onClick={handleClick}>
               <li className="px-4 py-3 mt-4 mb-8 border-2 border-slate-400 text-slate-700 font-bold rounded-lg ">
                 Log in
               </li>

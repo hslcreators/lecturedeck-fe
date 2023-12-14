@@ -1,6 +1,13 @@
+import bg from '../assets/bg-landing.png';
+
 export default function Hero() {
   return (
-    <div className="text-center px-6 lg:px-48 pt-[75px] h-screen flex flex-col items-center justify-center font-inter">
+    <div className="text-center px-6 lg:px-48 pt-[75px] h-screen flex flex-col items-center justify-center font-inter"
+    style={{
+      backgroundImage: `url(${bg})`,
+      backgroundSize: 'cover'
+    }}
+    >
       <h1 className="text-4xl lg:text-7xl font-black mb-8">
         <span className="text-blue">Create</span> flashcards with ease using{" "}
         <span className="text-blue">LectureDeck</span>
