@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="px-8 lg:px-24 h-[75px] flex items-center fixed w-full border-b">
+    <div className="px-6 lg:px-24 h-[75px] flex items-center fixed w-full border-b">
       <div className="hidden lg:flex items-center justify-between w-full">
         <div className="flex">
           <Link to="/">
