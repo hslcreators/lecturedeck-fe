@@ -33,6 +33,7 @@ function LoginForm() {
       console.log(data);
       // make axios request here
       setTimeout(() => {
+        setIsLoading(false);
         navigate("/dashboard/1234");
       }, 2000);
     } catch (err) {

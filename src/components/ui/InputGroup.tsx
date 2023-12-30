@@ -32,7 +32,8 @@ function InputGroup({
         leading-6 
         text-sm 
         font-semibold 
-        text-black`,
+        text-black
+        `,
           error && `text-rose-500`,
           disabled && `opacity-50`,
           labelClassName
@@ -46,7 +47,7 @@ function InputGroup({
         type={inputType}
         {...register(id)}
         className={cn(
-          `rounded-md border
+          `rounded-md !mt-2 border
        w-full 
        border-[#d0d5dd] 
        py-2 px-4 placeholder:text-slate-500 
