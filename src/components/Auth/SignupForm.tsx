@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm, UseFormRegister, FieldValues } from "react-hook-form";
 import toast from "react-hot-toast";
+import Loader from "../ui/Loader";
 
 const schema = z.object({
   name: z.string(),
@@ -126,7 +127,7 @@ function SignupForm() {
             className="w-full"
             size="lg"
           >
-            Create an Account
+           {isLoading ? <Loader size={'sm'} variant="secondary"/> : "Create an Account"} 
           </Button>
         </form>
       )}
