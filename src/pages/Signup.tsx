@@ -1,7 +1,12 @@
+import { SignupForm, FormLayout } from "@/components/Auth";
+import authBg2 from "@/assets/auth-bg-2.png"
 export default function Signup() {
   return (
-    <main>
-      <h1>Sign up</h1>
-    </main>
+   <FormLayout
+    imageUrl={authBg2}
+    alt="minecraft village"
+   >
+    <SignupForm/>
+   </FormLayout>
   );
 }
