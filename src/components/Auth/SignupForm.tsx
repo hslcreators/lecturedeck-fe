@@ -9,6 +9,8 @@ import * as z from "zod";
 import { useForm, UseFormRegister, FieldValues } from "react-hook-form";
 import toast from "react-hot-toast";
 import Loader from "../ui/Loader";
+import visible from "@/assets/visible.svg";
+import notVisible from "@/assets/not-visible.svg";
 
 const schema = z.object({
   name: z.string(),
@@ -28,6 +30,7 @@ type SchemaType = z.infer<typeof schema>;
 function SignupForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [agreed, setAgreed] = useState<boolean>(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const navigate = useNavigate();
   const [page, setPage] = useState<number>(1);
   const {
@@ -103,10 +106,13 @@ function SignupForm() {
           <InputGroup
             id="password"
             label="password"
-            inputType="password"
+            inputType={showPassword ? "text": "password"}
             register={register as unknown as UseFormRegister<FieldValues>}
             disabled={isLoading}
             error={errors["password"]}
+            icon={showPassword ? visible : notVisible}
+            iconAlt={showPassword ? "visible icon": "not visible icon"}
+            iconHandler={() => setShowPassword(!showPassword)}
           />
           <div className="flex gap-2">
             <input

@@ -11,6 +11,10 @@ type Props = {
   register: UseFormRegister<FieldValues>;
   error: FieldErrors<FieldValues>["x"];
   disabled?: boolean;
+  icon?: string;
+  iconHandler?: () => unknown;
+  iconSize?: number;
+  iconAlt?: string;
 };
 
 function InputGroup({
@@ -21,7 +25,11 @@ function InputGroup({
   error,
   inputClassName = "",
   labelClassName = "",
-  disabled = false
+  disabled = false,
+  icon,
+  iconSize = 25,
+  iconHandler = () => void 0,
+  iconAlt = "input icon",
 }: Props) {
   return (
     <div>
@@ -41,13 +49,14 @@ function InputGroup({
       >
         {label}
       </label>
-      <input
-        id={id}
-        disabled={disabled}
-        type={inputType}
-        {...register(id)}
-        className={cn(
-          `rounded-md !mt-2 border
+      <div className="relative">
+        <input
+          id={id}
+          disabled={disabled}
+          type={inputType}
+          {...register(id)}
+          className={cn(
+            `rounded-md !mt-2 border
        w-full 
        border-[#d0d5dd] 
        py-2 px-4 placeholder:text-slate-500 
@@ -59,14 +68,24 @@ function InputGroup({
        text-slate-500 
        h-9 
        block`,
-          error &&
-            `
+            error &&
+              `
        focus:ring-rose-500 
        text-rose-500 
        border-rose-500`,
-          inputClassName
+            inputClassName
+          )}
+        />
+        {icon && (
+          <img
+            onClick={iconHandler}
+            src={icon}
+            alt={iconAlt}
+            style={{ height: iconSize, width: iconSize }}
+            className="absolute my-auto top-0 bottom-0  right-3 cursor-pointer"
+          />
         )}
-      />
+      </div>
       {error && (
         <small className="text-xs font-medium text-rose-500">
           {error.message as string}

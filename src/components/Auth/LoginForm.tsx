@@ -8,6 +8,8 @@ import * as z from "zod";
 import { useState } from "react";
 import GoogleBtn from "./GoogleBtn";
 import Loader from "../ui/Loader";
+import visible from "@/assets/visible.svg";
+import notVisible from "@/assets/not-visible.svg";
 const schema = z.object({
   email: z.string().email("invalid email"),
   password: z
@@ -18,6 +20,7 @@ const schema = z.object({
 type schemaType = z.infer<typeof schema>;
 function LoginForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const navigate = useNavigate();
   const {
     register,
@@ -67,13 +70,16 @@ function LoginForm() {
         error={errors["email"]}
       />
       <InputGroup
-        id="password"
-        label="password"
-        inputType="password"
-        register={register as unknown as UseFormRegister<FieldValues>}
-        disabled={isLoading}
-        error={errors["password"]}
-      />
+            id="password"
+            label="password"
+            inputType={showPassword ? "text": "password"}
+            register={register as unknown as UseFormRegister<FieldValues>}
+            disabled={isLoading}
+            error={errors["password"]}
+            icon={showPassword ? visible : notVisible}
+            iconAlt={showPassword ? "visible icon": "not visible icon"}
+            iconHandler={() => setShowPassword(!showPassword)}
+          />
       <div className="text-right !my-3">
         <Link
           to="/password-reset"
