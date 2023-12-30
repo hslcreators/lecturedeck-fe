@@ -19,19 +19,19 @@ export default function Navbar() {
             <img src={logo} alt="logo" className="h-12" />
           </Link>
           <ul className="flex items-center ml-20 font-inter text-slate-500">
-            <Link to="/explore">
+            <Link to="#">
               <li className="mr-2 px-4">Explore</li>
             </Link>
             <Link to="/features">
               <li className="mx-2 px-4">Features</li>
             </Link>
-            <Link to="/resources">
+            <Link to="#">
               <li className="mx-2 px-4 flex items-center">
                 <span className="inline-block mr-2">Resources</span>{" "}
                 <img src={arrdown} alt="" />
               </li>
             </Link>
-            <Link to="/pricing">
+            <Link to="#">
               <li className="mx-2 px-4">Pricing</li>
             </Link>
           </ul>

@@ -1,31 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-
-import Navbar from "./components/Navbar";
-import Explore from "./pages/Explore";
 import Features from "./pages/Features";
-import Footer from "./pages/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Pricing from "./pages/Pricing";
-import Resources from "./pages/Resources";
 import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
+import UpdatePassword from "./pages/UpdatePassword";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-
-      <Routes>
+     <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<Explore />} />
         <Route path="/features" element={<Features />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/resources" element={<Resources />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/password-reset" element={<ForgotPassword/>}/>
+        <Route path='/password-reset/:userId/:token' element={<UpdatePassword/>}/>
       </Routes>
-
-      <Footer />
     </BrowserRouter>
   );
 }
