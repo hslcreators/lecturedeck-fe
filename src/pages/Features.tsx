@@ -1,9 +1,9 @@
-import Feature from "../components/Feature";
-import flash from '../assets/flash.svg';
-import message from '../assets/message.svg';
-import command from '../assets/command.svg'
-import bar from '../assets/bar.svg'
-import bg from '../assets/bg-resources.png'
+import Feature from "@/components/Features/Feature";
+import flash from '@/assets/flash.svg';
+import message from '@/assets/message.svg';
+import command from '@/assets/command.svg'
+import bar from '@/assets/bar.svg'
+import bg from '@/assets/bg-resources.png'
 
 export default function Features() {
   return (

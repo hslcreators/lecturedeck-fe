@@ -1,4 +1,4 @@
-import bg from '../assets/bg-landing.png';
+import bg from '@/assets/bg-landing.png';
 
 export default function Hero() {
   return (

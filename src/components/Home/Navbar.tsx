@@ -1,5 +1,5 @@
-import logo from "../assets/logo.png";
-import arrdown from "../assets/arrdown.svg";
+import logo from "@/assets/logo.png";
+import arrdown from "@/assets/arrdown.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 

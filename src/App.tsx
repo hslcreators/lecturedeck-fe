@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import UpdatePassword from "./pages/UpdatePassword";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   return (
@@ -17,6 +18,10 @@ export default function App() {
         <Route path="/password-reset" element={<ForgotPassword/>}/>
         <Route path='/password-reset/:userId/:token' element={<UpdatePassword/>}/>
       </Routes>
+      <Toaster
+      position="top-right"
+      reverseOrder={false}
+      />
     </BrowserRouter>
   );
 }
